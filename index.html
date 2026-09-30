@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V2V Safety System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚗 Vehicle-to-Vehicle Safety System</h1>
+        <p>Real-time V2V communication & collision-risk simulation</p>
+    </header>
+
+    <main class="container">
+
+        <section class="dashboard">
+
+            <div class="vehicle-card">
+                <h2>🚙 Vehicle A</h2>
+
+                <label>Speed</label>
+                <div class="value">
+                    <span id="speedA">60</span> km/h
+                </div>
+
+                <label>Distance</label>
+                <div class="value">
+                    <span id="distanceA">100</span> m
+                </div>
+
+                <div class="status" id="statusA">
+                    Connected
+                </div>
+            </div>
+
+            <div class="connection">
+                <div class="signal">📡</div>
+                <div>V2V LINK</div>
+                <div class="connection-line"></div>
+            </div>
+
+            <div class="vehicle-card">
+                <h2>🚗 Vehicle B</h2>
+
+                <label>Speed</label>
+                <div class="value">
+                    <span id="speedB">40</span> km/h
+                </div>
+
+                <label>Distance</label>
+                <div class="value">
+                    <span id="distanceB">40</span> m
+                </div>
+
+                <div class="status" id="statusB">
+                    Connected
+                </div>
+            </div>
+
+        </section>
+
+        <section class="risk-panel">
+
+            <h2>Collision Risk Monitor</h2>
+
+            <div class="risk-circle" id="riskCircle">
+                <span id="riskLevel">LOW</span>
+            </div>
+
+            <div class="risk-details">
+                <p>
+                    <strong>Relative Speed:</strong>
+                    <span id="relativeSpeed">20</span> km/h
+                </p>
+
+                <p>
+                    <strong>Time to Collision:</strong>
+                    <span id="ttc">7.20</span> seconds
+                </p>
+
+                <p>
+                    <strong>Communication:</strong>
+                    <span class="online">● ONLINE</span>
+                </p>
+            </div>
+
+        </section>
+
+        <section class="controls">
+
+            <h2>Simulation Controls</h2>
+
+            <div class="control-group">
+                <label for="vehicleASpeed">
+                    Vehicle A Speed
+                    <span id="speedAValue">60</span> km/h
+                </label>
+
+                <input
+                    type="range"
+                    id="vehicleASpeed"
+                    min="0"
+                    max="120"
+                    value="60"
+                >
+            </div>
+
+            <div class="control-group">
+                <label for="vehicleBSpeed">
+                    Vehicle B Speed
+                    <span id="speedBValue">40</span> km/h
+                </label>
+
+                <input
+                    type="range"
+                    id="vehicleBSpeed"
+                    min="0"
+                    max="120"
+                    value="40"
+                >
+            </div>
+
+            <div class="control-group">
+                <label for="vehicleDistance">
+                    Distance Between Vehicles
+                    <span id="distanceValue">40</span> m
+                </label>
+
+                <input
+                    type="range"
+                    id="vehicleDistance"
+                    min="5"
+                    max="200"
+                    value="40"
+                >
+            </div>
+
+            <button id="resetBtn">Reset Simulation</button>
+
+        </section>
+
+        <section class="event-log">
+
+            <h2>📋 V2V Event Log</h2>
+
+            <div id="logContainer">
+                <div class="log-item">
+                    System initialized successfully.
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>V2V Safety System Demo | Simulation only</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
